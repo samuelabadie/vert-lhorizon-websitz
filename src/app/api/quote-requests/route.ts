@@ -40,7 +40,7 @@ export async function POST(request: Request) {
     form = await new Response(Buffer.concat(chunks), { headers: { "content-type": request.headers.get("content-type")! } }).formData();
   } catch (error) {
     const oversized = error instanceof Error && error.message === "size";
-    return Response.json({ error: oversized ? "La demande dépasse 20 Mo de photos." : "Impossible de lire la demande." }, { status: oversized ? 413 : 400 });
+    return Response.json({ error: oversized ? "La demande dépasse la limite de 8 Mo." : "Impossible de lire la demande." }, { status: oversized ? 413 : 400 });
   }
 
   const limits = { service: 100, name: 100, town: 100, email: 200, phone: 30, description: 2000 };

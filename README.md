@@ -30,6 +30,12 @@ La compilation de production utilise Webpack (`next build --webpack`) : Turbopac
 
 ## État fonctionnel
 
+**Hébergement Netlify (2026-10-25)** : la configuration `netlify.toml` active `NEXT_PUBLIC_QUOTE_PROVIDER=netlify` au build. Le formulaire envoie les champs et photos à Netlify Forms via `/__forms.html`, déclaré dans `public/__forms.html`. Limite actuelle : cinq photos JPG/PNG/WebP, 7,5 Mo de photos au total pour rester sous 8 Mo par requête. Les fichiers sont transmis directement à Netlify ; le réencodage SMTP décrit ci-dessous ne s'applique pas à ce mode.
+
+Dans Netlify, activer **Forms > Enable form detection** avant le déploiement, puis vérifier la présence du formulaire `demande-de-devis`. Configurer **Forms > Submission notifications > Add notification > Email notification**, destinataire `vertlhorizon64@gmail.com`. Les notifications contiennent des liens vers les photos. Aucun mot de passe SMTP n'est nécessaire dans ce mode. L'enregistrement d'une demande ne garantit pas sa réception par e-mail : un test réel reste nécessaire après activation de la notification.
+
+**Mode local / serveur avec disque persistant (historique SMTP)** : les paragraphes suivants décrivent ce chemin alternatif. La limite de photos actuelle est de 7,5 Mo au total, remplaçant les 20 Mo initiaux.
+
 Le formulaire transmet désormais la demande et jusqu’à cinq photos à `POST /api/quote-requests`. Stockage de développement privé dans `.data/quote-requests/<uuid>/` : `request.json` et photos JPEG réencodées sans métadonnées. Limites : 8 Mo/photo, 20 Mo au total, JPG/PNG/WebP non animés, 40 mégapixels maximum. Envoi SMTP à `vertlhorizon64@gmail.com` avec les photos réencodées en pièces jointes et l’adresse du demandeur en Reply-To. Le succès signifie que le serveur SMTP a accepté le message, pas une confirmation de lecture ou de réception en boîte principale.
 
 La réception est désactivée en production par défaut (HTTP 503). `ENABLE_LOCAL_QUOTE_STORAGE=true` est réservé à un essai sur serveur avec disque persistant ; ce stockage local ne convient pas à un hébergement serverless. Prévoir stockage durable, notification, protection anti-abus et administration avant publication. Les champs définitifs restent à confirmer avec Martin.
@@ -79,3 +85,11 @@ Photo fournie IMG_0531 intégrée dans `public/assets/hero-chantier-martin.png`.
 ### Synchronisation GitHub — 2026-10-25
 
 Envoi demandé par Samuel de la photo réelle du hero, du masque polygonal, du favicon et des variantes générées conservées. Les mentions « non poussé » ci-dessus décrivent les étapes précédentes. DNS : la zone OVH et le résolveur 1.1.1.1 indiquent 75.2.60.5 pour le domaine racine ; le cache local conserve encore 213.186.33.5, qui redirige vers www tandis que Netlify redirige www vers le domaine racine. Propagation et certificat HTTPS à revérifier.
+
+### Facebook — 2026-10-25
+
+Icône Facebook ajoutée dans la navigation avec Instagram et TikTok. Page fournie : `https://www.facebook.com/people/Vert-lhorizon-64/61593692201768/` (paramètres de partage retirés). Ouverture dans un nouvel onglet. Réseaux sur une ligne dédiée sur mobile pour préserver les CTA. Contrôle TypeScript réussi ; modification locale non poussée.
+
+### Vérification Netlify et préparation du push — 2026-10-25
+
+Samuel confirme la mise en ligne sur Netlify et demande l'envoi des dernières modifications. Vérifications : domaine HTTPS accessible avec réponse 200 de Netlify ; `/__forms.html` retourne encore 404 avant le push ; build de production avec `NEXT_PUBLIC_QUOTE_PROVIDER=netlify` réussi, TypeScript inclus. Adaptation Netlify Forms et Facebook regroupés pour publication sur `origin/main`. Prochaine action : vérifier la détection du formulaire après déploiement, configurer la notification et confirmer une réception réelle avec Martin. Aucun devis test envoyé pendant cette vérification.

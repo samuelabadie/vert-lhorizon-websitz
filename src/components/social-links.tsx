@@ -12,6 +12,11 @@ const profiles: { name: string; url: string | null; icon: ReactNode }[] = [
     url: "https://www.tiktok.com/@vert.lhorizon.64",
     icon: <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.5 2h-3v13.4a3.1 3.1 0 1 1-2.7-3.07V9.3a6.1 6.1 0 1 0 5.7 6.1V8.6a8.5 8.5 0 0 0 5 1.6v-3a5 5 0 0 1-5-5.2Z" /></svg>,
   },
+  {
+    name: "Facebook",
+    url: "https://www.facebook.com/people/Vert-lhorizon-64/61593692201768/",
+    icon: <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 22v-9h3l.5-3.5h-3.5V7.25c0-1 .28-1.75 1.75-1.75H17V2.35A23 23 0 0 0 14.45 2C11.8 2 10 3.6 10 6.55V9.5H7V13h3v9h3.5Z" /></svg>,
+  },
 ];
 
 export function SocialLinks() {
