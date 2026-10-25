@@ -1,0 +1,14 @@
+node_modules/
+.next/
+out/
+.env*
+!.env.example
+*.tsbuildinfo
+next-env.d.ts
+
+.data/
+
+# Archives et aperçus locaux
+dist/
+apercu-*.png
+.DS_Store

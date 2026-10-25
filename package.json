@@ -1,0 +1,29 @@
+{
+  "name": "vert-lhorizon",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --hostname 127.0.0.1 --port 3000",
+    "build": "next build --webpack",
+    "start": "next start --hostname 127.0.0.1 --port 3000",
+    "typecheck": "tsc --noEmit",
+    "start:render": "next start --hostname 0.0.0.0"
+  },
+  "dependencies": {
+    "geist": "latest",
+    "next": "latest",
+    "nodemailer": "^10.2.1",
+    "react": "latest",
+    "react-dom": "latest",
+    "sharp": "^0.35.5"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "latest",
+    "@types/node": "latest",
+    "@types/nodemailer": "^8.0.2",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "tailwindcss": "latest",
+    "typescript": "latest"
+  }
+}
