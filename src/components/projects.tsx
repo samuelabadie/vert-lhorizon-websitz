@@ -8,19 +8,17 @@ type Project = {
   after: string | null;
 };
 
-// Emplacements de maquette : photos et prestations à confirmer pour chaque chantier.
+// Photos fournies par Samuel : avant puis après pour chaque réalisation.
 const projects: Project[] = [
-  { id: "01", title: "Réalisation 01", tags: [{ label: "Taille de haies", category: "garden" }], before: null, after: null },
-  { id: "02", title: "Réalisation 02", tags: [{ label: "Terrassement", category: "works" }, { label: "Évacuation", category: "works" }], before: null, after: null },
-  { id: "03", title: "Réalisation 03", tags: [{ label: "Débroussaillage", category: "garden" }, { label: "Tonte", category: "garden" }], before: null, after: null },
-  { id: "04", title: "Réalisation 04", tags: [{ label: "Aménagement extérieur", category: "garden" }], before: null, after: null },
+  { id: "01", title: "Aménagement d’un massif avec galets", tags: [{ label: "Aménagement extérieur", category: "garden" }], before: "/assets/realisation-01-before.webp", after: "/assets/realisation-01-after.webp" },
+  { id: "02", title: "Entretien d’un terrain", tags: [{ label: "Entretien de terrain", category: "garden" }], before: "/assets/realisation-02-before.webp", after: "/assets/realisation-02-after.webp" },
 ];
 
 export function Projects() {
   return <section className="projects" id="realisations" aria-labelledby="projects-title">
     <div className="projects-heading">
       <div><p className="eyebrow">LES RÉALISATIONS</p><h2 id="projects-title">Avant. Après.<br />Ça change tout.</h2></div>
-      <p>Un aperçu du travail sur le terrain.<br /><span>Photos à venir · aperçu de la mise en page.</span></p>
+      <p>Un aperçu du travail sur le terrain.</p>
     </div>
     <div className="projects-grid">
       {projects.map(project => <article className="project-card" key={project.id} aria-label={project.title}>
@@ -31,7 +29,7 @@ export function Projects() {
           </figure>)}
           <span className="project-transition" aria-hidden="true">↗</span>
         </div>
-        <div className="project-caption"><span className="project-number">{project.id}</span><ul className="project-tags" aria-label="Prestations prévues pour cet emplacement">{project.tags.map(tag => <li className={`project-tag project-tag-${tag.category}`} key={tag.label}>{tag.label}</li>)}</ul></div>
+        <div className="project-caption"><span className="project-number">{project.id}</span><ul className="project-tags" aria-label="Prestations réalisées">{project.tags.map(tag => <li className={`project-tag project-tag-${tag.category}`} key={tag.label}>{tag.label}</li>)}</ul></div>
       </article>)}
     </div>
   </section>;

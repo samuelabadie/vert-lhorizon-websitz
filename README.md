@@ -93,3 +93,7 @@ Icône Facebook ajoutée dans la navigation avec Instagram et TikTok. Page fourn
 ### Vérification Netlify et préparation du push — 2026-10-25
 
 Samuel confirme la mise en ligne sur Netlify et demande l'envoi des dernières modifications. Vérifications : domaine HTTPS accessible avec réponse 200 de Netlify ; `/__forms.html` retourne encore 404 avant le push ; build de production avec `NEXT_PUBLIC_QUOTE_PROVIDER=netlify` réussi, TypeScript inclus. Adaptation Netlify Forms et Facebook regroupés pour publication sur `origin/main`. Prochaine action : vérifier la détection du formulaire après déploiement, configurer la notification et confirmer une réception réelle avec Martin. Aucun devis test envoyé pendant cette vérification.
+
+### Deux réalisations photographiées — 2026-10-25
+
+Les quatre emplacements de maquette sont remplacés par deux avant/après, dans l’ordre fourni par Samuel : IMG_0038 → IMG_0057 (massif avec galets), puis IMG_0520 → IMG_0524 (entretien de terrain). Copies WebP dans `public/assets/realisation-*.webp`, orientation normalisée, dimensions maximales 1200 × 1600 et métadonnées retirées ; sources HEIC conservées dans leurs pièces jointes originales. Ratio 3:4 pour afficher les photos intégrales. Mentions de maquette retirées et prestations adaptées aux photos. Vérification visuelle des quatre conversions effectuée ; prochaine étape : validation du rendu par Samuel.

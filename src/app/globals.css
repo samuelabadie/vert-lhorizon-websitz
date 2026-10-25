@@ -65,3 +65,6 @@ footer{align-items:center;flex-wrap:wrap}.social-links{display:flex;align-items:
 
 /* Trois réseaux : garder les CTA lisibles sur les petits écrans. */
 @media(max-width:700px){.nav-actions{grid-template-columns:1fr 1fr}.nav-actions .social-links{grid-column:1/-1;justify-self:end}}
+
+/* Photos de réalisations au format natif 3:4, sans recadrage. */
+.project-photo{aspect-ratio:3/4}
