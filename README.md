@@ -59,3 +59,23 @@ Commande `start:render` ajoutée, répertoire de stockage configurable par `QUOT
 ## Publication du code — 2026-10-25
 
 Premier envoi demandé sur le dépôt dédié, branche `main`. Sources, assets publics et documentation inclus ; secrets, demandes clients, dépendances, builds et ancienne maquette exclus. Compilation de production et TypeScript vérifiés avant publication. Prochaine étape : adapter le formulaire à l’hébergement choisi (Netlify proposé), puis déployer et relier OVH.
+
+## Hero — 2026-10-25
+
+Deux visuels générés remplacés par des scènes sans Martin, intervenants anonymes de dos et couleurs naturelles moins saturées. Découpes polygonales conservées, originaux archivés dans les assets existants. Prompts et provenance dans `prompts-images.md`. Modification locale, non poussée sur GitHub.
+
+### Hero unique — 2026-10-25
+
+Les deux images superposées sont remplacées par un grand jardin central sans personnage : moitié sauvage / moitié entretenue, arbre, outils et mini-pelle. Image affichée intégralement sur ordinateur et mobile pour conserver les éléments de la scène. Asset et prompt documentés dans `prompts-images.md`. Modification locale ; pas de nouveau commit ni push.
+
+### Favicon — 2026-10-25
+
+SVG fourni par Samuel intégré sans modification dans `src/app/icon.svg`, selon la convention de métadonnées Next.js. Source conservée dans `../../imgs/favicon.svg`. XML validé.
+
+### Photo réelle du hero — 2026-10-25
+
+Photo fournie IMG_0531 intégrée dans `public/assets/hero-chantier-martin.png`. Recadrage CSS sur le bas (Martin et remorque), ratio 5/4 et masque polygonal inspiré de la DA. Original conservé, aucune retouche générative. Modifications locales non poussées.
+
+### Synchronisation GitHub — 2026-10-25
+
+Envoi demandé par Samuel de la photo réelle du hero, du masque polygonal, du favicon et des variantes générées conservées. Les mentions « non poussé » ci-dessus décrivent les étapes précédentes. DNS : la zone OVH et le résolveur 1.1.1.1 indiquent 75.2.60.5 pour le domaine racine ; le cache local conserve encore 213.186.33.5, qui redirige vers www tandis que Netlify redirige www vers le domaine racine. Propagation et certificat HTTPS à revérifier.

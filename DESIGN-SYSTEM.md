@@ -21,9 +21,9 @@ Les valeurs sont centralisées dans `src/app/globals.css` avec `@theme`. Utilisa
 
 - Boutons sans bordure, rayon `rounded-button` (5 px), focus clavier visible.
 - Panneaux avec rayon `rounded-panel` (8 px).
-- Hero centré, deux photos à découpe polygonale qui se chevauchent, aucun texte sur les images.
+- Hero centré, grande photo réelle à découpe polygonale, cadrée sur Martin et sa remorque ; aucun texte sur l’image.
 - Navigation avec logo, accès aux sections, demande de devis et appel direct.
 - Services : jardin sur fond vert vif, travaux sur fond jaune.
 - Fenêtre de devis native `dialog`, fermeture au clavier et par bouton.
 
-Les photos de chantier du hero sont générées à partir de la référence de Martin. Son portrait dans la section de présentation est la photo fournie.
+Le hero utilise la photo réelle IMG_0531 fournie par Samuel. Les variantes générées sont conservées mais ne sont plus affichées. Le portrait de la section de présentation est également une photo fournie.
